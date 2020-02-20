@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>test</title>
+    <meta charset="utf-8">
+</head>
+<script src="../dist/report_0.0.11_3b5deb65.js"></script>
+<script>
+   // 日志保存的地址
+    window.JSMONITOR.config.url = 'http://localhost:3000'
+    window.JSMONITOR.config.requestHeaders = {};
+    window.JSMONITOR.config.ext = function ext() {
+        return {
+            userId: localStorage.userId || 1
+        }
+    }
+    window.JSMONITOR.init(window)
+</script>
+<script src="./scratch.js"></script>
+<!--script loaded error-->
+<script src="./fucking.js"></script>
+
+<body>
+    <button id="test">Break me</button>
+    <div>
+        resource loaded error: img <img src="asdasd.jpg" />
+    </div>
+    <script>
+        ready()
+    </script>
+    <input type="text" onkeypress="keypress(event)"/>
+    <input type="password" onkeypress="keypress(event)"/>
+    <textarea onkeypress="keypress(event)"></textarea>
+    <div style="width: 100px;height:50px;" onkeypress="keypress(event)" contenteditable="true"></div>
+    <button onclick="divide(1, 0)">undefined func</button>
+    <button onclick="derp()">array</button>
+    <button onclick="throwEval()">throw eval</button>
+    <button onclick="throwString()">throw string</button>
+    <button onclick="blobExample()">blob example</button>
+    <button onclick="promise()">promise</button>
+    <button onclick="a()">stack</button>
+</body>
+
+</html>
